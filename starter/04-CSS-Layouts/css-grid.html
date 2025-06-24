@@ -40,6 +40,33 @@
         margin: 40px;
 
         /* CSS GRID */
+        display: grid;
+        /*temp*/
+        display: none;
+        /* grid-template-columns: 200px 1fr 1fr 150px; */
+        /* grid-template-columns: 1fr 1fr 1fr auto; */
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 300px, 200px;
+        /* height: 500px; */
+        /* gap: 50px;
+         */
+        column-gap: 20px;
+        row-gap: 40px;
+      }
+
+      .el--8 {
+        grid-column: 2 / 3; /*The row the element should start */
+        grid-row: 1 / 2;
+      }
+
+      .el--2 {
+        /* grid-column: 1 / span 4; Start at the first grid line then go across 3 lines */
+        grid-column: 1/-1; /*the grid counts the top in posisitve and the btm in negative so that starting from the right is a negative and starting from the left is a positive.*/
+        grid-row: 2;
+      }
+
+      .el--6 {
+        /* grid-row: 3/5; */
       }
 
       .container--2 {
@@ -47,12 +74,29 @@
         font-family: sans-serif;
         background-color: black;
         font-size: 40px;
-        margin: 100px;
+        margin: 40px;
 
-        width: 1000px;
+        width: 700px;
         height: 600px;
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
+        /*You can align the grid items inside the tracks */
+        /* align the tracks inside of container. Distribute empty space */
+        gap: 50px;
+        justify-content: center;
+        align-content: center;
+        /* Aligining the items INSIDE Cells: moving items around inside cells */
+        align-items: center;
+        justify-items: center;
+      }
+
+      .el--3 {
+        /* Moving individual items in the list. */
+        align-self: end;
+        justify-self: end;
       }
     </style>
   </head>
